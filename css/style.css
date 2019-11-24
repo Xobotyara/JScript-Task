@@ -1,0 +1,19 @@
+body{
+    position: relative;
+}
+#left-side{
+    background-color: red;
+    width: 50%;
+    position: absolute;
+    left: 0;
+
+}
+#right-side{
+    background-color: blue;
+    width: 50%;
+    position: absolute;
+    right: 0;
+}
+input{
+    margin-top: 500px;
+}
