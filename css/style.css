@@ -8,24 +8,25 @@ body{
     height: 100vh;
 }
 #left-side{
-    background-color: red;
+    background-color:#FFB400;
     left: 0;
 }
 #right-side{
-    background-color: blue;
+    background-color:#116D00;
     right: 0;
 }
 
 #leftBtn, 
 #rightBtn{
-    width: 4vw;
+    width: 5vw;
     height: 100%;
     border: none;
     box-shadow: none;
     background-color: inherit;
-    background-size: 25px;
-    background-position: center;
+    background-size: 13px;
+    background-position-y: center;
     background-repeat: no-repeat; 
+    cursor: pointer;
 }
 #leftBtn:focus,
 #rightBtn:focus,
@@ -35,10 +36,12 @@ body{
 }
 #leftBtn{
     float: right;
-    background-image: url(../img/arrow-left.svg);
+    background-image: url(../img/icons/arrow-left-white.svg);
+    background-position-x: left;
     
 } 
 #rightBtn{
     float: left;
-    background-image: url(../img/arrow-right.svg);
+    background-image: url(../img/icons/arrow-right-white.svg);
+    background-position-x: right;
 }
