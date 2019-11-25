@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function(){
     let leftSideWidth = 100 / (parseFloat(getComputedStyle(document.body).width) / parseFloat(getComputedStyle(leftSide).width));
     let rightSideWidth = 100 / (parseFloat(getComputedStyle(document.body).width) / parseFloat(getComputedStyle(rightSide).width));
 
-    function animations(interval, timeToClear, step, direction){
+    function animations(step, direction){
         let start = Date.now(); 
         let timer = setInterval(function() {
             let timePassed = Date.now() - start;
-            if (timePassed >= timeToClear) {
+            if (timePassed >= 420) {
                 leftBtn.disabled = false;
                 rightBtn.disabled = false;
                 clearInterval(timer);
@@ -27,28 +27,28 @@ document.addEventListener('DOMContentLoaded', function(){
                 leftSideWidth += step;
                 leftSide.style.width = leftSideWidth + '%'
             };
-        }, interval);
+        }, 20);
     };
 
     leftBtn.onclick = function() {
         leftBtn.disabled = true;
-        if(rightSideWidth == 4){
-            animations(20, 480, 4, 'left');
-        } else if(leftSideWidth == 4){
-            animations(20, 480, 2, 'right'); 
+        if(rightSideWidth == 10){
+            animations(4, 'left');
+        } else if(leftSideWidth == 10){
+            animations(2, 'right'); 
         } else{
-            animations(20, 480, 2, 'left');
+            animations(2, 'left');
         }; 
     };
 
     rightBtn.onclick = function() {
         rightBtn.disabled = true;
-        if(leftSideWidth == 4){
-            animations(20, 480, 4, 'right');
-        } else if(rightSideWidth == 4){
-            animations(20, 480, 2, 'left'); 
+        if(leftSideWidth == 10){
+            animations(4, 'right');
+        } else if(rightSideWidth == 10){
+            animations(2, 'left'); 
         } else {
-            animations(20, 480, 2, 'right'); 
+            animations(2, 'right'); 
         };
       };
 

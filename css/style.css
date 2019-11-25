@@ -1,5 +1,44 @@
+*{
+    box-sizing: border-box;
+}
 body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+.header{
     position: relative;
+}
+.header__nav{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 50px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+.header__nav span{
+    font-size: 33px;
+    font-weight: 900;
+    color: #FFF;
+    position: absolute;
+    margin-left: -22px;
+    left: 50%;
+}
+.header__nav-imgbox{
+    display: flex;
+    align-items: center;
+}
+.header__nav img:not(:last-child){
+    margin-right: 25px;
+}
+.nav-avatar{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }
 #left-side,
 #right-side{
