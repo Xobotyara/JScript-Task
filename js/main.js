@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }, 20);
     };
 
-    leftBtn.onclick = function() {
+    rightBtn.onclick = function() {
         leftBtn.disabled = true;
         if(rightSideWidth == 10){
             animations(4, 'left');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }; 
     };
 
-    rightBtn.onclick = function() {
+    leftBtn.onclick = function() {
         rightBtn.disabled = true;
         if(leftSideWidth == 10){
             animations(4, 'right');
