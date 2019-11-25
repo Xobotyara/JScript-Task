@@ -4,10 +4,15 @@
 body{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    line-height: 21px;
+    margin: 0;
+}
+p, h1, h2, h3, h4, h5, h6{
     margin: 0;
 }
 .header{
     position: relative;
+    color: #FFF;
 }
 .header__nav{
     position: absolute;
@@ -32,7 +37,7 @@ body{
     display: flex;
     align-items: center;
 }
-.header__nav img:not(:last-child){
+.header__nav a:not(:last-child){
     margin-right: 25px;
 }
 .nav-avatar{
@@ -49,11 +54,108 @@ body{
 #left-side{
     background-color:#FFB400;
     left: 0;
+    display: flex;
+    justify-content: space-between;
 }
 #right-side{
     background-color:#116D00;
     right: 0;
 }
+.left-side__selector{
+    min-height: 100%;
+    width: 110px;
+}
+.header__item-title-box{
+    margin-top: 150px;
+}
+.item-category{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 20px;
+}
+.item-name{
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 90px;
+}
+.item-subname{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 53px;
+    
+}
+.header__item-info{
+    margin-top: 90px;
+    display: flex;
+}
+.info-composition,
+.info-properties,
+.info-composition-select{
+    margin-bottom: 18px;
+}
+.header__item-info-composition{
+    margin-right: 53px;
+}
+.header__item-info-row:not(:last-child){
+    border-bottom: 1px solid #FFF;
+}
+.header__item-info-row{
+    display: flex;
+    justify-content: space-between;
+    width: 149px;
+}
+.header__item-info-storage p:not(:last-child){
+    margin-bottom: 16px;
+}
+.storage-time,
+.storage-temp,
+.storage-humidity{
+    position: relative;
+    padding-left: 30px;
+}
+.storage-time::before,
+.storage-temp::before,
+.storage-humidity::before{
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    content: '';
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+.storage-time::before{
+    background-image: url(../img/icons/calendar-white.svg);
+}
+.storage-temp::before{
+    background-image: url(../img/icons/thermometer-white.svg);
+}
+.storage-humidity::before{
+    background-image: url(../img/icons/umbrella-white.svg);
+}
+.info-composition-select,
+.info-properties-select{
+    position: relative;
+    padding-right: 30px;
+}
+.info-composition-select::after,
+.info-properties-select::after{
+    position: absolute;
+    margin-left: 5px;
+    content: '>';
+}
+.products-img{
+    width: 560px;
+}
+
+
+
+
+
+
+
+
 
 #leftBtn, 
 #rightBtn{
@@ -66,6 +168,7 @@ body{
     background-position-y: center;
     background-repeat: no-repeat; 
     cursor: pointer;
+    z-index: 100;
 }
 #leftBtn:focus,
 #rightBtn:focus,
@@ -74,13 +177,11 @@ body{
     outline: none;
 }
 #leftBtn{
-    float: right;
     background-image: url(../img/icons/arrow-left-white.svg);
     background-position-x: left;
     
 } 
 #rightBtn{
-    float: left;
     background-image: url(../img/icons/arrow-right-white.svg);
     background-position-x: right;
 }

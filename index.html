@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap&subset=cyrillic"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>JScript Task</title>
 </head>
@@ -13,23 +14,67 @@
 <body>
     <header class="header">
         <nav class="header__nav">
-            <img src="img/icons/burger-white.svg" alt="">
+            <a href="#"><img src="img/icons/burger-white.svg" alt=""></a>
             <span>VS</span>
             <div class="header__nav-imgbox">
-                <img src="img/icons/zoom-white.svg" alt="">
-                <img src="img/icons/heart-white.svg" alt="">
-                <img src="img/icons/basket-white.svg" alt="">
-                <img class="nav-avatar" src="img/avatar.jpg" alt="">
+                <a href="#"><img src="img/icons/zoom-white.svg" alt=""></a>
+                <a href="#"><img src="img/icons/heart-white.svg" alt=""></a>
+                <a href="#"><img src="img/icons/basket-white.svg" alt=""></a>
+                <a href="#"><img class="nav-avatar" src="img/avatar.jpg" alt=""></a>
             </div>
-
         </nav>
-        <section id="left-side">
-            <input id="leftBtn" type="button">
-        </section>
+        <div id="left-side" class="header__item">
+            <div class="left-side__selector">
 
-        <section id="right-side">
+            </div>
+            <div class="left-side__item-info">
+                <div class="header__item-title-box">
+                    <h4 class="item-category">Чипсы и снеки</h4>
+                    <h1 class="item-name">Чипсы</h1>
+                    <h2 class="item-subname">картофельные</h2>
+                </div>
+                <div class="header__item-info">
+                    <div class="header__item-info-composition">
+                        <div class="info-composition">
+                            <div class="header__item-info-row">
+                                <p>Калории, ккал</p>
+                                <p>760</p>
+                            </div>
+                            <div class="header__item-info-row">
+                                <p>Белки, г</p>
+                                <p>6.5</p>
+                            </div>
+                            <div class="header__item-info-row">
+                                <p>Жиры, г</p>
+                                <p>30.0</p>
+                            </div>
+                            <div class="header__item-info-row">
+                                <p>Углеводы, г</p>
+                                <p>53.0</p>
+                            </div>
+                            <div class="header__item-info-row">
+                                <p>Клетчатка, г</p>
+                                <p>0</p>
+                            </div>
+                        </div>
+                        <div class="info-properties">
+                        </div>
+                        <p class="info-composition-select">Состав</p>
+                        <p class="info-properties-select">Свойства</p>
+                    </div>
+                    <div class="header__item-info-storage">
+                        <p class="storage-time">7 месяцев</p>
+                        <p class="storage-temp">0-20°С</p>
+                        <p class="storage-humidity">&lt; 75%</p>
+                    </div>
+                </div>
+            </div>
+            <img src="img/products/chips-product.png" class="products-img" alt="">
+            <input id="leftBtn" type="button">
+        </div>
+        <div id="right-side" class="header__item">
             <input id="rightBtn" type="button">
-        </section>
+        </div>
     </header>
 
 
