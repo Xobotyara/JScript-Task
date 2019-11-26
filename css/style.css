@@ -247,7 +247,17 @@ p, h1, h2, h3, h4, h5, h6{
     color: #000;
     font-weight: 700;
     line-height: 35px;
+    position: relative;
 
+}
+.item-calculator__cost::after{
+    position: absolute;
+    right: 34px;
+    width: 50px;
+    height: 7px;
+    background-repeat: no-repeat;
+    content: "";
+    background-image: url(../img/icons/arrow-long-right-black.svg);
 }
 .item-calculator__cost span{
     margin-left: 10px;
@@ -262,6 +272,17 @@ p, h1, h2, h3, h4, h5, h6{
     height: 11px;
     content: "";
     background-image: url(../img/icons/ruble-currency-sign.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.input-basket{
+    background: none;
+    background-image: url(../img/icons/basket-black.svg);
+    height: 15px;
+    width: 15px;
+    margin-left: 75px;
+    border: none;
+    box-shadow: none;
     background-repeat: no-repeat;
     background-size: contain;
 }
