@@ -10,6 +10,9 @@ body{
 p, h1, h2, h3, h4, h5, h6{
     margin: 0;
 }
+a{
+    cursor: pointer;
+}
 .header{
     position: relative;
     color: #FFF;
@@ -286,7 +289,38 @@ p, h1, h2, h3, h4, h5, h6{
     background-repeat: no-repeat;
     background-size: contain;
 }
-
+.item-calculator__avatars{
+    display: flex;
+    align-items: baseline;
+    min-height: 30px;
+    min-width: 100px;
+    margin-left: 15px;
+}
+.item-calculator__avatars span{
+    align-self: center;
+}
+.item-calculator__avatars-box{
+    margin-left: 160px;
+    display: flex;
+    list-style: none;
+}
+.item-calculator__avatars-box li:last-child{
+    margin-right: 5px; 
+}
+.item-calculator__avatars-box li img{
+    border-radius: 50%;
+    max-height: 30px;
+    display: block;
+    margin-left: -10px;    
+}
+.link-like,
+.link-links{
+    margin-top: 9px;
+    height: 18px;
+    width: 18px;
+    margin-left: 10px;
+    align-self: center;
+}
 
 
 
