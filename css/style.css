@@ -75,7 +75,8 @@ p, h1, h2, h3, h4, h5, h6{
     display: flex;
 }
 .left-side__item-info{
-
+    margin-right: 10px;
+    min-width: fit-content;
 }
 .item-title-box{
 
@@ -168,13 +169,18 @@ p, h1, h2, h3, h4, h5, h6{
 .left-side__item-calculator{
     width: 100%;
     display: flex;
+    align-items: center;
+    min-height: 35px;
+    margin-top: 40px;
+
+
 }
 .item-calculator__select-weight{
     position: relative;
 }
 .item-calculator__select-weight input{
     border: 2px solid #FFF;
-    border-radius: 28px;
+    border-radius: 15px;
     background: transparent;
     color: #FFF;
     padding: 5px 40px 5px 10px;
@@ -192,7 +198,73 @@ p, h1, h2, h3, h4, h5, h6{
     background-repeat: no-repeat;
     background-size: contain;
 }
+.item-calculator__energy{
+    margin-left: 30px;
+    padding-left: 20px;
+    position: relative;
+}
+.item-calculator__energy::before{
+    position: absolute;
+    left: -11px;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-image: url(../img/icons/fire-white.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.item-calculator__energy::after{
+    position: absolute;
+    right: -20px;
+    width: 10px;
+    height: 10px;
+    content: "=";
+}
+.item-calculator__running{
+    margin-left: 40px;
+    padding-left: 20px;
+    position: relative;
+}
+.item-calculator__running::before{
+    position: absolute;
+    left: -11px;
+    width: 22px;
+    height: 22px;
+    content: "";
+    background-image: url(../img/icons/running-white.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.item-calculator__cost{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    min-height: 35px;
+    min-width: 163px;
+    border-radius: 18px;
+    background-color: #fff;
+    box-shadow: 0px 0px 6px #00000066;
+    color: #000;
+    font-weight: 700;
+    line-height: 35px;
 
+}
+.item-calculator__cost span{
+    margin-left: 10px;
+    margin-right: 5px;
+    position: relative;
+}
+.item-calculator__cost span::after{
+    position: absolute;
+    top: 12px;
+    right: -16px;
+    width: 11px;
+    height: 11px;
+    content: "";
+    background-image: url(../img/icons/ruble-currency-sign.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
 
 
