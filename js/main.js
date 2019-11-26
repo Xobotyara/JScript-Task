@@ -50,7 +50,25 @@ document.addEventListener('DOMContentLoaded', function(){
         } else {
             animations(2, 'right'); 
         };
+        let leftItemInfo = document.getElementById('left__item-info');
+        let leftImg = document.getElementById('left__item-img');
+        if (leftItemInfo.classList.contains('hidden')) {
+            leftItemInfo.classList.remove('hidden');
+            setTimeout(function () {
+                leftItemInfo.classList.remove('visibleHidden');
+                leftImg.style.top = '153px';
+                leftImg.style.left = '427px';
+            }, 20);
+          } else {
+            leftItemInfo.classList.add('visibleHidden');
+            leftItemInfo.ontransitionend = function() {
+            leftItemInfo.classList.add('hidden');
+          };
+        };
       };
+
+
+      
 
 
 

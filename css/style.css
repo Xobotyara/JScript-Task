@@ -13,6 +13,7 @@ p, h1, h2, h3, h4, h5, h6{
 a{
     cursor: pointer;
 }
+
 .header{
     position: relative;
     color: #FFF;
@@ -72,7 +73,9 @@ a{
 .left-side__container{
     display: flex;
     flex-direction: column;
+    width: 100%;
     padding-top: 150px;
+    align-items: flex-start;
 }
 .left-side__item{
     display: flex;
@@ -82,8 +85,9 @@ a{
     min-width: fit-content;
 }
 .item-title-box{
-
+    z-index: 100;
 }
+
 .item-title-box__category{
     font-size: 20px;
     font-weight: 400;
@@ -104,6 +108,8 @@ a{
 .item-info{
     margin-top: 90px;
     display: flex;
+    transition: all 0.2s ease-in;
+    opacity: 1;
 }
 .info-composition,
 .info-properties,
@@ -162,8 +168,12 @@ a{
     content: '>';
 }
 .item-img-box{
-    align-self: center;
-    width: auto;
+    width: 63%;
+    position: absolute;
+    top: 340px;
+    left: 110px;
+    transition: all 0.2s ease-in;
+
 }
 .item-img-box img{
     display: block;
@@ -172,11 +182,17 @@ a{
 .left-side__item-calculator{
     width: 100%;
     display: flex;
+    flex-direction: column;
+    margin-top: calc(80px + (12.6vw/0.75));
+}
+.item-calculator__left-box,
+.item-calculator__right-box{
+    display: flex;
+    max-height: 35px;
     align-items: center;
-    min-height: 35px;
-    margin-top: 40px;
-
-
+}
+.item-calculator__right-box{
+    margin-top: 22px;
 }
 .item-calculator__select-weight{
     position: relative;
@@ -241,7 +257,6 @@ a{
 .item-calculator__cost{
     display: flex;
     align-items: center;
-    margin-left: 20px;
     min-height: 35px;
     min-width: 163px;
     border-radius: 18px;
@@ -290,7 +305,7 @@ a{
     background-size: contain;
 }
 .item-calculator__avatars{
-    display: flex;
+    display: none;
     align-items: baseline;
     min-height: 30px;
     min-width: 100px;
@@ -354,4 +369,16 @@ a{
 #rightBtn{
     background-image: url(../img/icons/arrow-right-white.svg);
     background-position-x: right;
+}
+
+
+
+.hidden{
+    display: none;
+}
+.visibleHidden{
+    opacity: 0;
+}
+.flex-column{
+    flex-direction: column;
 }
