@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function(){
     let leftItemInfo = document.getElementById('left__item-info');
     let leftImg = document.getElementById('left__item-img');
     let leftCalculator = document.querySelector('.left-side__item-calculator');
+    let leftCostBox = document.querySelector('.item-calculator__cost');
+    let leftAvatars = document.querySelector('.item-calculator__avatars');
     
     rightBtn.onclick = function() {
 
@@ -64,11 +66,21 @@ document.addEventListener('DOMContentLoaded', function(){
         };
 
         if(rightSide.classList.contains('minimaized')){
+
             leftImg.classList.add('animated');
-            leftCalculator.style.top = '44px';
+            leftCalculator.classList.add('animated');
+            leftCostBox.classList.add('animated');
+            leftAvatars.classList.add('animated');
+            leftAvatars.classList.remove('visibleHidden');
+            
         } else {
+
             leftImg.classList.remove('animated');
-            leftCalculator.style.top = ''; 
+            leftCalculator.classList.remove('animated');
+            leftCostBox.classList.remove('animated');
+            leftAvatars.classList.remove('animated');
+            leftAvatars.classList.add('visibleHidden');
+
         }
         
         if (leftItemInfo.classList.contains('hidden')) {
