@@ -2,73 +2,91 @@
 document.addEventListener('DOMContentLoaded', function(){
     let leftSide = document.getElementById('left-side');
     let rightSide = document.getElementById('right-side');
-    let leftSideWidth = 100 / (parseFloat(getComputedStyle(document.body).width) / parseFloat(getComputedStyle(leftSide).width));
-    let rightSideWidth = 100 / (parseFloat(getComputedStyle(document.body).width) / parseFloat(getComputedStyle(rightSide).width));
-
-    function animations(step, direction){
-        let start = Date.now(); 
-        let timer = setInterval(function() {
-            let timePassed = Date.now() - start;
-            if (timePassed >= 420) {
-                leftBtn.disabled = false;
-                rightBtn.disabled = false;
-                clearInterval(timer);
-                return;
-            };
-
-            if(direction == 'left'){
-                rightSideWidth += step;
-                rightSide.style.width = rightSideWidth +'%';
-                leftSideWidth -= step;
-                leftSide.style.width = leftSideWidth + '%'
-            } else{
-                rightSideWidth -= step;
-                rightSide.style.width = rightSideWidth +'%';
-                leftSideWidth += step;
-                leftSide.style.width = leftSideWidth + '%'
-            };
-        }, 20);
-    };
-
+    let leftItemInfo = document.getElementById('left__item-info');
+    let leftImg = document.getElementById('left__item-img');
+    let leftCalculator = document.querySelector('.left-side__item-calculator');
+    
     rightBtn.onclick = function() {
-        leftBtn.disabled = true;
-        if(rightSideWidth == 10){
-            animations(4, 'left');
-        } else if(leftSideWidth == 10){
-            animations(2, 'right'); 
+
+        if(rightSide.classList.contains('minimaized')){
+
+            rightSide.classList.remove('minimaized');
+            leftSide.classList.remove('maximaized');
+            rightSide.classList.add('maximaized');
+            leftSide.classList.add('minimaized');
+
+            leftBtn.classList.remove('go-right');
+            rightBtn.classList.remove('go-right');
+            leftBtn.classList.add('go-left');
+            rightBtn.classList.add('go-left');
+        } else if(leftSide.classList.contains('minimaized')){
+
+            leftSide.classList.remove('minimaized');
+            rightSide.classList.remove('maximaized');
+
+            leftBtn.classList.remove('go-left');
+            rightBtn.classList.remove('go-left');
         } else{
-            animations(2, 'left');
+
+            leftSide.classList.add('minimaized');
+            rightSide.classList.add('maximaized');
+
+            leftBtn.classList.add('go-left');
+            rightBtn.classList.add('go-left');
         }; 
     };
-
     leftBtn.onclick = function() {
-        rightBtn.disabled = true;
-        if(leftSideWidth == 10){
-            animations(4, 'right');
-        } else if(rightSideWidth == 10){
-            animations(2, 'left'); 
-        } else {
-            animations(2, 'right'); 
+        if(rightSide.classList.contains('minimaized')){
+
+            leftSide.classList.remove('maximaized');
+            rightSide.classList.remove('minimaized');
+
+            leftBtn.classList.remove('go-right');
+            rightBtn.classList.remove('go-right');
+        } else if(leftSide.classList.contains('minimaized')){
+
+            rightSide.classList.remove('maximaized');
+            rightSide.classList.add('minimaized');
+            leftSide.classList.add('maximaized');
+            leftSide.classList.remove('minimaized');
+
+            leftBtn.classList.remove('go-left');
+            rightBtn.classList.remove('go-left');
+            leftBtn.classList.add('go-right');
+            rightBtn.classList.add('go-right');
+        } else{
+
+            leftSide.classList.add('maximaized');
+            rightSide.classList.add('minimaized');
+
+            leftBtn.classList.add('go-right');
+            rightBtn.classList.add('go-right');
         };
-        let leftItemInfo = document.getElementById('left__item-info');
-        let leftImg = document.getElementById('left__item-img');
+
+        if(rightSide.classList.contains('minimaized')){
+            leftImg.classList.add('animated');
+            leftCalculator.style.top = '44px';
+        } else {
+            leftImg.classList.remove('animated');
+            leftCalculator.style.top = ''; 
+        }
+        
         if (leftItemInfo.classList.contains('hidden')) {
             leftItemInfo.classList.remove('hidden');
             setTimeout(function () {
                 leftItemInfo.classList.remove('visibleHidden');
-                leftImg.style.top = '153px';
-                leftImg.style.left = '427px';
             }, 20);
-          } else {
+        } else {
             leftItemInfo.classList.add('visibleHidden');
-            leftItemInfo.ontransitionend = function() {
-            leftItemInfo.classList.add('hidden');
-          };
+            setTimeout(function () {
+                leftItemInfo.classList.add('hidden');
+            }, 400);
         };
-      };
 
 
-      
+
+    };
+       
 
 
 
