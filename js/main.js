@@ -71,6 +71,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
             toggleRightContentAnimation();
             toggleLeftContentAnimation();
+            switchHidden(leftContainer);
+            switchHidden(rightContainer);
             switchHidden(leftItemInfo);
             switchHidden(rightItemInfo);
             switchHidden(leftAvatars);
@@ -88,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function(){
             rightBtn.classList.remove('go-left');
 
             toggleRightContentAnimation();
+            switchHidden(leftContainer);
             switchHidden(rightItemInfo);
             switchHidden(rightAvatars);
 
@@ -103,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function(){
             rightBtn.classList.add('go-left');
 
             toggleRightContentAnimation();
+            switchHidden(leftContainer);
             switchHidden(rightItemInfo);
             switchHidden(rightAvatars);
         }; 
@@ -124,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function(){
             rightBtn.classList.remove('go-right');
 
             toggleLeftContentAnimation();
+            switchHidden(rightContainer);
             switchHidden(leftItemInfo);
             switchHidden(leftAvatars);
 
@@ -147,6 +152,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
             toggleRightContentAnimation();
             toggleLeftContentAnimation();
+            switchHidden(leftContainer);
+            switchHidden(rightContainer);
             switchHidden(leftItemInfo);
             switchHidden(rightItemInfo);
 
@@ -162,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function(){
             rightBtn.classList.add('go-right');
 
             toggleLeftContentAnimation();
+            switchHidden(rightContainer);
             switchHidden(leftItemInfo);
             switchHidden(leftAvatars);
         };
