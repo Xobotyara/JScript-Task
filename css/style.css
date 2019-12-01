@@ -333,8 +333,8 @@ a{
     transition: all 0.3s cubic-bezier(1, 0.66, 0.33, 0);
 }
 .left__item-calculator.animated,
-.left__item-calculator.animated{
-    top: 495px;
+.right__item-calculator.animated{
+    top: calc((49vw - 220px) * 0.75 + 13vw);
 }
 
 .item-calculator__left-box{
@@ -509,12 +509,6 @@ a{
     margin-left: 10px;
     align-self: center;
 }
-
-
-
-
-
-
 
 .hidden{
     display: none;
