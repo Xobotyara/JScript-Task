@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function(){
         };
     }
 
+
     rightBtn.onclick = function() {
 
         if(rightSide.classList.contains('minimaized')){ //Левая створка раскрыта, нажимаем правую кнопку
@@ -77,7 +78,10 @@ document.addEventListener('DOMContentLoaded', function(){
         }; 
 
     };
+
+
     leftBtn.onclick = function() {
+        
         if(rightSide.classList.contains('minimaized')){ //Левая створка раскрыта, нажимаем левую кнопку
 
             leftSide.classList.remove('maximaized');
