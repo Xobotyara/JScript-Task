@@ -124,8 +124,11 @@ a{
 }
 .selector-inner form input{
     cursor: pointer;
-    margin-left: -3px;
+    margin-left: -9px;
+    margin-top: -3px;
     opacity: 0;
+    width: 24px;
+    height: 24px;
 }
 .selector-inner form span:not(:last-child){
     margin-bottom: 67px;
