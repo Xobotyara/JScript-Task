@@ -1,15 +1,21 @@
 'use strict';
+
 document.addEventListener('DOMContentLoaded', function(){
     let leftSide = document.getElementById('left-side');
     let rightSide = document.getElementById('right-side');
     let leftContainer = document.querySelector('.left-side__container');
+    let rightContainer = document.querySelector('.right-side__container');
     let leftItemInfo = document.getElementById('left__item-info');
     let leftSelector = document.querySelector('.left-side__selector');
+    let rightSelector = document.querySelector('.right-side__selector');
     let leftImg = document.getElementById('left__item-img');
-    let leftCalculator = document.querySelector('.left-side__item-calculator');
-    let leftCostBox = document.querySelector('.item-calculator__cost');
-    let leftAvatars = document.querySelector('.item-calculator__avatars');
-    let formSelector = document.querySelector('.selector');
+    let leftCalculator = document.querySelector('.left__item-calculator');
+    let rightCalculator = document.querySelector('.right__item-calculator');
+    let leftCostBox = document.querySelector('.item-calculator__cost.left');
+    let rightCostBox = document.querySelector('.item-calculator__cost.right');
+    let leftAvatars = document.querySelector('.item-calculator__avatars.left');
+    let rightAvatars = document.querySelector('.item-calculator__avatars.right');
+    let formSelector = document.querySelectorAll('.selector');
 
     function toggleLeftContentAnimation(){
         leftImg.classList.toggle('animated');
@@ -17,6 +23,13 @@ document.addEventListener('DOMContentLoaded', function(){
         leftCostBox.classList.toggle('animated');
         leftAvatars.classList.toggle('animated');
         leftAvatars.classList.toggle('visibleHidden');
+    }
+
+    function toggleRightContentAnimation(){
+        rightCalculator.classList.toggle('animated');
+        rightCostBox.classList.toggle('animated');
+        rightAvatars.classList.toggle('animated');
+        rightAvatars.classList.toggle('visibleHidden');
     }
 
     function switchHidden(elementToSwitch){
@@ -44,15 +57,20 @@ document.addEventListener('DOMContentLoaded', function(){
             leftSide.classList.add('minimaized');
 
             leftContainer.classList.add('scrolled');
+            rightContainer.classList.remove('scrolled');
             leftSelector.classList.add('hidden');
+            rightSelector.classList.remove('hidden');
 
             leftBtn.classList.remove('go-right');
             rightBtn.classList.remove('go-right');
             leftBtn.classList.add('go-left');
             rightBtn.classList.add('go-left');
 
+            toggleRightContentAnimation();
             toggleLeftContentAnimation();
             switchHidden(leftItemInfo);
+            switchHidden(leftAvatars);
+            switchHidden(rightAvatars);
 
         } else if(leftSide.classList.contains('minimaized')){ //Правая створка раскрыта, нажимаем правую кнопку
 
@@ -65,6 +83,9 @@ document.addEventListener('DOMContentLoaded', function(){
             leftBtn.classList.remove('go-left');
             rightBtn.classList.remove('go-left');
 
+            toggleRightContentAnimation();
+            switchHidden(rightAvatars);
+
         } else{                                              //Пополам, нажимаем правую кнопку
 
             leftSide.classList.add('minimaized');
@@ -75,6 +96,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
             leftBtn.classList.add('go-left');
             rightBtn.classList.add('go-left');
+
+            toggleRightContentAnimation();
+            switchHidden(rightAvatars);
         }; 
 
     };
@@ -87,11 +111,15 @@ document.addEventListener('DOMContentLoaded', function(){
             leftSide.classList.remove('maximaized');
             rightSide.classList.remove('minimaized');
 
+            rightContainer.classList.remove('scrolled');
+            rightSelector.classList.remove('hidden');
+
             leftBtn.classList.remove('go-right');
             rightBtn.classList.remove('go-right');
 
             toggleLeftContentAnimation();
             switchHidden(leftItemInfo);
+            switchHidden(leftAvatars);
 
         } else if(leftSide.classList.contains('minimaized')){ //Правая створка раскрыта, нажимаем левую кнопку
 
@@ -100,6 +128,9 @@ document.addEventListener('DOMContentLoaded', function(){
             leftSide.classList.add('maximaized');
             leftSide.classList.remove('minimaized');
 
+
+            rightContainer.classList.add('scrolled');
+            rightSelector.classList.add('hidden');
             leftContainer.classList.remove('scrolled');
             leftSelector.classList.remove('hidden');
 
@@ -108,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function(){
             leftBtn.classList.add('go-right');
             rightBtn.classList.add('go-right');
 
+            toggleRightContentAnimation();
             toggleLeftContentAnimation();
             switchHidden(leftItemInfo);
 
@@ -116,11 +148,15 @@ document.addEventListener('DOMContentLoaded', function(){
             leftSide.classList.add('maximaized');
             rightSide.classList.add('minimaized');
 
+            rightContainer.classList.add('scrolled');
+            rightSelector.classList.add('hidden');
+
             leftBtn.classList.add('go-right');
             rightBtn.classList.add('go-right');
 
             toggleLeftContentAnimation();
             switchHidden(leftItemInfo);
+            switchHidden(leftAvatars);
         };
 
     };
@@ -129,9 +165,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-    formSelector.onclick = function(){
-        document.querySelector('.checked').classList.remove('checked');     
-        let inputChecked = document.querySelector('input[type="radio"]:checked');
+    formSelector[0].onclick = function(){
+        formSelector[0].querySelector('.checked').classList.remove('checked');     
+        let inputChecked = formSelector[0].querySelector('input[type="radio"]:checked');
+        inputChecked.parentElement.classList.add('checked');   
+    }
+    formSelector[1].onclick = function(){
+        formSelector[1].querySelector('.checked').classList.remove('checked');     
+        let inputChecked = formSelector[1].querySelector('input[type="radio"]:checked');
         inputChecked.parentElement.classList.add('checked');   
     }
 

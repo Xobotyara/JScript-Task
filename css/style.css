@@ -98,14 +98,14 @@ a{
 .left-side__selector{
     left: 0;
 }
-.left__selector-inner{
+.selector-inner{
     border: 1px solid white;
     position: relative;
     width: 1px;
     height: 300px;
     margin-left: 55px;
 }
-.left__selector-inner form{
+.selector-inner form{
     position: absolute;
     width: 19px;
     left: -10px;
@@ -114,23 +114,24 @@ a{
     flex-direction: column;
     align-items: center;
 }
-.left__selector-inner form span{
+
+.selector-inner form span{
     background-color: #fff;
     border-radius: 50%;
     height: 6px;
     width: 6px;
     display: block;
 }
-.left__selector-inner form input{
+.selector-inner form input{
     cursor: pointer;
     margin-left: -3px;
     opacity: 0;
 }
-.left__selector-inner form span:not(:last-child){
+.selector-inner form span:not(:last-child){
     margin-bottom: 67px;
     padding: 0;
 }
-.left__selector-inner form span.checked{
+.selector-inner form span.checked{
     height: 16px;
     width: 16px;
     box-shadow: 0px 3px 6px #00000029;
@@ -187,14 +188,27 @@ a{
 
 .left-side__container.scrolled{
     position: absolute;
-    left: -61vw;
+    left: -45vw;
 }
 .left-side__container{
     width: 100%;
     height: 100%;
-    padding: 150px 4vw 20px 110px;
+    padding: 150px 110px 20px;
     position: relative;
     left: 0;
+    transition-delay: 0.5s;
+    transition: all 0.3s cubic-bezier(1, 0.66, 0.33, 0);
+}
+.right-side__container.scrolled{
+    position: absolute;
+    right: -45vw;
+}
+.right-side__container{
+    width: 100%;
+    height: 100%;
+    padding: 150px 110px 20px;
+    position: relative;
+    right: 0;
     transition-delay: 0.5s;
     transition: all 0.3s cubic-bezier(1, 0.66, 0.33, 0);
 }
@@ -291,30 +305,31 @@ a{
     content: '>';
 }
 .item-img-box{
-    width: calc(45vw - 110px);
+    width: calc(49vw - 220px);
     position: absolute;
     top: 340px;
     transition-delay: 0.5s;
     transition: all 0.3s cubic-bezier(1, 0.66, 0.33, 0);
 }
 .item-img-box.animated{
-    width: calc(86vw - 310px - 110px);
+    width: calc(90vw - 310px - 220px);
     transform: translate(330px, -190px);
 }
 .item-img-box img{
     display: block;
     max-width: 100%;
 }
-.left-side__item-calculator{
-    position: absolute;
-    top: calc((45vw - 110px) * 0.75 + 180px);
+.left__item-calculator,
+.right__item-calculator{
+    top: calc((49vw - 220px) * 0.75 + 180px);
     width: 100%;
     display: flex;
     position: relative;
     transition-delay: 0.5s;
     transition: all 0.3s cubic-bezier(1, 0.66, 0.33, 0);
 }
-.left-side__item-calculator.animated{
+.left__item-calculator.animated,
+.left__item-calculator.animated{
     top: 495px;
 }
 
@@ -403,6 +418,7 @@ a{
     left: 340px;
     top: 0px;
 }
+
 .item-calculator__cost::after{
     position: absolute;
     right: 34px;
@@ -439,7 +455,7 @@ a{
     background-repeat: no-repeat;
     background-size: contain;
 }
-.item-calculator__avatars{
+.item-calculator__avatars.left{
     display: flex;
     align-items: baseline;
     position: absolute;
@@ -448,10 +464,23 @@ a{
     transition-delay: 0.5s;
     transition: all 0.3s cubic-bezier(1, 0.66, 0.33, 0);
 }
-.item-calculator__avatars.animated{
+.item-calculator__avatars.left.animated{
     left: 52vw;
     top: 0px;
 }
+.item-calculator__avatars.right{
+    display: flex;
+    align-items: baseline;
+    position: absolute;
+    right: 0vw;
+    top: 100px;
+    transition-delay: 0.5s;
+    transition: all 0.3s cubic-bezier(1, 0.66, 0.33, 0);
+}
+.item-calculator__avatars.right.animated{
+    top: 0px;
+}
+
 .item-calculator__avatars span{
     align-self: center;
 }
