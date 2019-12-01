@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function(){
             elementToSwitch.classList.add('visibleHidden');
             setTimeout(function () {
                 elementToSwitch.classList.add('hidden');
-            }, 400);
+            }, 300);
         };
     }
 
@@ -156,6 +156,8 @@ document.addEventListener('DOMContentLoaded', function(){
             switchHidden(rightContainer);
             switchHidden(leftItemInfo);
             switchHidden(rightItemInfo);
+            switchHidden(rightAvatars);
+            switchHidden(leftAvatars);
 
         } else{                                                 //Пополам, нажимаем левую кнопку
 
