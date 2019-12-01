@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let leftCalculator = document.querySelector('.left-side__item-calculator');
     let leftCostBox = document.querySelector('.item-calculator__cost');
     let leftAvatars = document.querySelector('.item-calculator__avatars');
-    
+    let formSelector = document.querySelector('.selector');
     rightBtn.onclick = function() {
 
         if(rightSide.classList.contains('minimaized')){
@@ -94,12 +94,16 @@ document.addEventListener('DOMContentLoaded', function(){
                 leftItemInfo.classList.add('hidden');
             }, 400);
         };
-
-
-
     };
-       
-    
+    formSelector.onclick = function(){
+        document.querySelector('.checked').classList.remove('checked');     
+        let inputChecked = document.querySelector('input[type="radio"]:checked');
+        inputChecked.parentElement.classList.add('checked');   
+        
+        
+    }
+      
+
 
 
 })
