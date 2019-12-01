@@ -185,12 +185,18 @@ a{
     left: 9vw;
 }
 
-
+.left-side__container.scrolled{
+    position: absolute;
+    left: -61vw;
+}
 .left-side__container{
     width: 100%;
     height: 100%;
     padding: 150px 4vw 20px 110px;
     position: relative;
+    left: 0;
+    transition-delay: 0.5s;
+    transition: all 0.3s cubic-bezier(1, 0.66, 0.33, 0);
 }
 .item-title-box{
     position: absolute;
