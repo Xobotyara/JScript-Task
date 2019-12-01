@@ -6,9 +6,11 @@ document.addEventListener('DOMContentLoaded', function(){
     let leftContainer = document.querySelector('.left-side__container');
     let rightContainer = document.querySelector('.right-side__container');
     let leftItemInfo = document.getElementById('left__item-info');
+    let rightItemInfo = document.getElementById('right__item-info');
     let leftSelector = document.querySelector('.left-side__selector');
     let rightSelector = document.querySelector('.right-side__selector');
     let leftImg = document.getElementById('left__item-img');
+    let rightImg = document.getElementById('right__item-img');
     let leftCalculator = document.querySelector('.left__item-calculator');
     let rightCalculator = document.querySelector('.right__item-calculator');
     let leftCostBox = document.querySelector('.item-calculator__cost.left');
@@ -26,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     function toggleRightContentAnimation(){
+        rightImg.classList.toggle('animated');
         rightCalculator.classList.toggle('animated');
         rightCostBox.classList.toggle('animated');
         rightAvatars.classList.toggle('animated');
@@ -69,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function(){
             toggleRightContentAnimation();
             toggleLeftContentAnimation();
             switchHidden(leftItemInfo);
+            switchHidden(rightItemInfo);
             switchHidden(leftAvatars);
             switchHidden(rightAvatars);
 
@@ -84,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function(){
             rightBtn.classList.remove('go-left');
 
             toggleRightContentAnimation();
+            switchHidden(rightItemInfo);
             switchHidden(rightAvatars);
 
         } else{                                              //Пополам, нажимаем правую кнопку
@@ -98,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function(){
             rightBtn.classList.add('go-left');
 
             toggleRightContentAnimation();
+            switchHidden(rightItemInfo);
             switchHidden(rightAvatars);
         }; 
 
@@ -142,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function(){
             toggleRightContentAnimation();
             toggleLeftContentAnimation();
             switchHidden(leftItemInfo);
+            switchHidden(rightItemInfo);
 
         } else{                                                 //Пополам, нажимаем левую кнопку
 
