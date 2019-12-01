@@ -10,9 +10,32 @@ document.addEventListener('DOMContentLoaded', function(){
     let leftCostBox = document.querySelector('.item-calculator__cost');
     let leftAvatars = document.querySelector('.item-calculator__avatars');
     let formSelector = document.querySelector('.selector');
+
+    function toggleLeftContentAnimation(){
+        leftImg.classList.toggle('animated');
+        leftCalculator.classList.toggle('animated');
+        leftCostBox.classList.toggle('animated');
+        leftAvatars.classList.toggle('animated');
+        leftAvatars.classList.toggle('visibleHidden');
+    }
+
+    function switchHidden(elementToSwitch){
+        if (elementToSwitch.classList.contains('hidden')) {
+            elementToSwitch.classList.remove('hidden');
+            setTimeout(function () {
+                elementToSwitch.classList.remove('visibleHidden');
+            }, 20);
+        } else {                                            
+            elementToSwitch.classList.add('visibleHidden');
+            setTimeout(function () {
+                elementToSwitch.classList.add('hidden');
+            }, 400);
+        };
+    }
+
     rightBtn.onclick = function() {
 
-        if(rightSide.classList.contains('minimaized')){
+        if(rightSide.classList.contains('minimaized')){ //Левая створка раскрыта, нажимаем правую кнопку
 
             rightSide.classList.remove('minimaized');
             leftSide.classList.remove('maximaized');
@@ -27,15 +50,10 @@ document.addEventListener('DOMContentLoaded', function(){
             leftBtn.classList.add('go-left');
             rightBtn.classList.add('go-left');
 
-            leftImg.classList.remove('animated');
-            leftCalculator.classList.remove('animated');
-            leftCostBox.classList.remove('animated');
-            leftAvatars.classList.remove('animated');
-            leftAvatars.classList.add('visibleHidden');
+            toggleLeftContentAnimation();
+            switchHidden(leftItemInfo);
 
-
-
-        } else if(leftSide.classList.contains('minimaized')){
+        } else if(leftSide.classList.contains('minimaized')){ //Правая створка раскрыта, нажимаем правую кнопку
 
             leftSide.classList.remove('minimaized');
             rightSide.classList.remove('maximaized');
@@ -46,13 +64,7 @@ document.addEventListener('DOMContentLoaded', function(){
             leftBtn.classList.remove('go-left');
             rightBtn.classList.remove('go-left');
 
-            leftImg.classList.remove('animated');
-            leftCalculator.classList.remove('animated');
-            leftCostBox.classList.remove('animated');
-            leftAvatars.classList.remove('animated');
-            leftAvatars.classList.add('visibleHidden');
-
-        } else{
+        } else{                                              //Пополам, нажимаем правую кнопку
 
             leftSide.classList.add('minimaized');
             rightSide.classList.add('maximaized');
@@ -63,29 +75,21 @@ document.addEventListener('DOMContentLoaded', function(){
             leftBtn.classList.add('go-left');
             rightBtn.classList.add('go-left');
         }; 
-        
-        if (leftItemInfo.classList.contains('hidden')) {
-            leftItemInfo.classList.remove('hidden');
-            setTimeout(function () {
-                leftItemInfo.classList.remove('visibleHidden');
-            }, 20);
-        } else {
-            leftItemInfo.classList.add('visibleHidden');
-            setTimeout(function () {
-                leftItemInfo.classList.add('hidden');
-            }, 400);
-        };
 
     };
     leftBtn.onclick = function() {
-        if(rightSide.classList.contains('minimaized')){
+        if(rightSide.classList.contains('minimaized')){ //Левая створка раскрыта, нажимаем левую кнопку
 
             leftSide.classList.remove('maximaized');
             rightSide.classList.remove('minimaized');
 
             leftBtn.classList.remove('go-right');
             rightBtn.classList.remove('go-right');
-        } else if(leftSide.classList.contains('minimaized')){
+
+            toggleLeftContentAnimation();
+            switchHidden(leftItemInfo);
+
+        } else if(leftSide.classList.contains('minimaized')){ //Правая створка раскрыта, нажимаем левую кнопку
 
             rightSide.classList.remove('maximaized');
             rightSide.classList.add('minimaized');
@@ -99,45 +103,28 @@ document.addEventListener('DOMContentLoaded', function(){
             rightBtn.classList.remove('go-left');
             leftBtn.classList.add('go-right');
             rightBtn.classList.add('go-right');
-        } else{
+
+            toggleLeftContentAnimation();
+            switchHidden(leftItemInfo);
+
+        } else{                                                 //Пополам, нажимаем левую кнопку
 
             leftSide.classList.add('maximaized');
             rightSide.classList.add('minimaized');
 
             leftBtn.classList.add('go-right');
             rightBtn.classList.add('go-right');
+
+            toggleLeftContentAnimation();
+            switchHidden(leftItemInfo);
         };
 
-        if(rightSide.classList.contains('minimaized')){
-
-            leftImg.classList.add('animated');
-            leftCalculator.classList.add('animated');
-            leftCostBox.classList.add('animated');
-            leftAvatars.classList.add('animated');
-            leftAvatars.classList.remove('visibleHidden');
-            
-        } else {
-
-            leftImg.classList.remove('animated');
-            leftCalculator.classList.remove('animated');
-            leftCostBox.classList.remove('animated');
-            leftAvatars.classList.remove('animated');
-            leftAvatars.classList.add('visibleHidden');
-
-        }
-        
-        if (leftItemInfo.classList.contains('hidden')) {
-            leftItemInfo.classList.remove('hidden');
-            setTimeout(function () {
-                leftItemInfo.classList.remove('visibleHidden');
-            }, 20);
-        } else {
-            leftItemInfo.classList.add('visibleHidden');
-            setTimeout(function () {
-                leftItemInfo.classList.add('hidden');
-            }, 400);
-        };
     };
+
+
+
+
+
     formSelector.onclick = function(){
         document.querySelector('.checked').classList.remove('checked');     
         let inputChecked = document.querySelector('input[type="radio"]:checked');
